@@ -6,6 +6,26 @@
     <title>The Vilager Portfolio</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="mqueries.css" />
+
+    <!-- Text Animate Links -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- Text Animate Links -->
+
+    <!-- fontAwesome -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- fontAwesome -->
+
   </head>
   <body>
     <nav id="desktop-nav">
@@ -38,41 +58,41 @@
     </nav>
 
     <section id="profile">
-      <div class="profile-pic-container">
-        <img src="/resources/images/Toya_Profile2.jpg" alt="Toya profile" />
-      </div>
-      <div class="text-section">
-        <p class="text-section-p1">Hello, I'm</p>
-        <h1 class="title">Gilbert Toya</h1>
-        <p class="text-section-p2">Installation Specialist</p>
-        <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('/resources/images/resume-example.pdf')"
-          >
-            Download CV
-          </button>
-          <button
-            class="btn btn-color-1"
-            onclick="location.href('./#contacts')"
-          >
-            Contact Info.
-          </button>
-        </div>
-        <div id="socials-container">
-          <img
-            src="/resources/images/linkedin.png"
-            alt="My LinkedIn Profile"
-            class="icon"
-            onclick="https:linkedin.com"
-          />
-          <img
-            src="/resources/images/github.png"
-            alt="My Github Profile"
-            class="icon"
-            onclick="https:github.com"
-          />
-        </div>
+      <div class="profile-container">
+          <div class="left-profile">
+            <div class="profile-pic-container">
+              <img src="/resources/images/Toya_Profile2.jpg" alt="Toya profile" />
+            </div>
+          </div>
+
+          <div class="right-profile">
+            <div class="text-section">
+                <p class="text-section-p1">Hello, I'm</p>
+                <h1 class="title animate__animated animate__rubberBand">Gilbert Toya</h1>
+                <p class="text-section-p2">Installation Specialist</p>
+                <div class="btn-container">
+                  <button
+                    class="btn btn-color-2"
+                    onclick="window.open('/resources/images/resume-example.pdf')"
+                  >
+                    Download CV
+                  </button>
+                  <button
+                    class="btn btn-color-1"
+                    onclick="location.href('./#contacts')"
+                  >
+                    Contact Info.
+                  </button>
+                </div>
+            <div id="socials-container">
+              <i class="fa-brands fa-linkedin icon" onclick="https://linkedin.com"></i>
+              <i class="fa-brands fa-github icon" onclick="https://github.com"></i>
+              <i class="fa-brands fa-x-twitter icon" onclick="https://twitter.com"></i>
+              <i class="fa-brands fa-instagram icon" onclick="https://instagram.com"></i>
+              <i class="fa-brands fa-youtube icon" onclick="https://youtube.com"></i>
+            </div>
+          </div>
+          </div>
       </div>
     </section>
 
@@ -315,6 +335,8 @@
       />
     </section>
 
+    <hr>
+
     <section id="contacts">
       <p class="text-section-p1">Get In Touch</p>
       <h1 class="title">Contact Me</h1>
@@ -330,6 +352,14 @@
         </div>
 
       </div>
+
+      <div id="socials-container">
+              <!-- <i class="fa-brands fa-linkedin icon" onclick="https://linkedin.com"></i> -->
+              <i class="fa-brands fa-github icon" onclick="https://github.com"></i>
+              <i class="fa-brands fa-x-twitter icon" onclick="https://twitter.com"></i>
+              <i class="fa-brands fa-instagram icon" onclick="https://instagram.com"></i>
+      </div>
+
     </section>
     <footer>
       <nav>
@@ -344,6 +374,11 @@
       </nav>
       <p>CopyRight &#169; 2024 Gilbert Toya. All Rights Reserved</p>
     </footer>
+
+    <div class="theme-btn">
+        <i class="fa-solid fa-circle-half-stroke"></i>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>

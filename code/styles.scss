@@ -4,10 +4,21 @@
 * {
     margin: 0;
     padding: 0;
+    //background-color: grey;
+}
+
+:root {
+    --primary-color: #e4dddd;
+}
+
+.light-mode {
+    --primary-color: #000;
 }
 
 body {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    //background-color: var(--primary-color);
+    background-color: var(--primary-color);
 }
 
 html {
@@ -17,6 +28,59 @@ html {
 p {
     color: rgb(85, 85, 85);
 }
+
+hr {
+    margin-top: 60px;
+    height: -10rem;
+}
+
+.theme-btn {
+    background-color: grey;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: .7rem 0;
+    box-shadow: 0 3px 15px rgba(0,0,0,.2);
+    border-radius: 50%;
+    padding: 1rem;
+    cursor: pointer;
+
+    i {
+        font-size: 1rem;
+        color: white;
+        pointer-events: none;
+    }
+}
+
+.theme-btn {
+    top: 1%;
+    right: 3%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: gray;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+    box-shadow: 0 3px 5px rgba(0,0,0,.3);
+
+    &:active {
+        transform: translateY(-50px);
+    }
+
+    i {
+        font-size: 2rem;
+        color: white;
+        pointer-events: none;
+    }
+}
+
+
 /*General*/
 
 /*Transition*/
@@ -153,7 +217,8 @@ section {
     height: 96vh;
     margin: 0 10rem;
     box-sizing: border-box;
-    min-height: fit-content;   
+    min-height: fit-content;
+    
 }
 
 .section-container {
@@ -162,7 +227,94 @@ section {
 /*Section Section*/
 
 /*Profile Section*/
+
+/*Profile Quarantine*/
+.profile-container {
+    margin-top: -35px;
+    width: 100%;
+    //background-color: red;
+    grid-gap: 3rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 100%;
+
+    .left-profile {
+        left: 1rem;
+        //background-color: burlywood;
+        display: flex;
+        align-items: center;
+        position: relative;
+        width: 550px;
+
+        .profile-pic-container {
+             //margin-top: 10px;
+             //top: 60px;
+             width: 80%;
+             height: 85%;
+             //border-radius: var(--br-sm-2);
+             margin-left: 0rem;
+             margin-top: 0px;
+             //background-color: rgb(48, 48, 48);
+
+             img {
+                 border-radius: 50%;
+                 width: 500px;
+                 height: 500px;
+                 object-fit:fill;
+                 transition: all .4s ease-in-out;
+                 filter: grayscale(100%);
+                 &:hover {
+                     filter: grayscale(0);
+                 }
+             }
+         }
+    }
+
+        .right-profile {
+            //background: aquamarine;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 720px;
+            //padding-right: 1rem;
+
+            .text-section {
+                height: 500px;
+                //object-fit:inherit;
+                //background-color: green;
+                //padding-top: 10px;
+                text-align: center;
+
+                .text-section-p1 {
+                    text-align: center;
+                    font-size: 1.7rem;
+                    padding-top: 2.5rem;
+                    padding-bottom: 1rem;
+                }
+
+                .text-section-p2 {
+                    text-align: center;
+                    font-size: 1.7rem;
+                    padding-top: 2rem;
+                    padding-bottom: 1rem;
+                }
+
+                .btn-container {
+                    padding-top: 2.5rem;
+                    padding-bottom: 1rem;
+                }
+
+                #socials-container {
+                    //background: yellow;
+                    padding-top: 2rem;
+                    padding-bottom: 2rem;
+                }
+            }
+    }
+}
+/*Profile Quarantine*/
 #profile {
+    margin-left: 1rem;
     display: flex;
     justify-content: center;
     gap: 5rem;
@@ -176,10 +328,10 @@ section {
     margin: auto 0;
 }
 
-.text-section {
-    align-self: center;
-    text-align: center;
-}
+// .text-section {
+//     align-self: center;
+//     text-align: center;
+// }
 
 .text-section p {
     font-weight: 600;
@@ -187,6 +339,7 @@ section {
 
 .text-section-p1 {
     text-align: center;
+    font-size: 1.5rem;
 }
 
 .text-section-p2 {
@@ -204,6 +357,10 @@ section {
     justify-content: center;
     margin-top: 1rem;
     gap: 1rem;
+
+    i {
+        font-size: 35px;
+    }
 }
 /*Profile Section*/
 
@@ -265,6 +422,18 @@ section {
 /*About Section*/
 #about {
     position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 40%;
+        height: 1px;
+        background-color: gold;
+        //background-color: red($color: #000000);
+        transform: translateX(-50%);
+    }
 }
 
 .about-container {
@@ -290,27 +459,27 @@ section {
 .arrow-icon {
     position: absolute;
     right: -5rem;
-    bottom: 2.5rem;
+    bottom: 1rem;
 }
 
 .details-container {
-    padding: 1.5rem;
+    padding: 1rem;
     flex: 1;
-    background: white;
-    border-radius: 2rem;
-    border: rgb(53, 53, 53) 0.1rem solid;
+    background: rgb(180, 174, 174);
+    border-radius: 3rem;
+    border: rgb(53, 53, 53) 0.3rem solid;
     border-color: rgb(163, 163, 163);
     text-align: center;
 }
 
 .section-container {
-    gap: 4rem;
-    height: 80%;
+    gap: 3rem;
+    height: 70%;
 }
 
 .profile-pic-container {
-    height: 400px;
-    width: 400px;
+    height: 450px;
+    width: 600px;
     margin: auto 0;
     //border-radius: 50%;
 
@@ -323,6 +492,18 @@ section {
 /*Experience Section*/
 #experience {
     position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 40%;
+        height: 1px;
+        background-color: gold;
+        //background-color: red($color: #000000);
+        transform: translateX(-50%);
+    }
 }
 
 .experience-sub-title {
@@ -362,6 +543,18 @@ section {
 /*Projects Section*/
 #projects {
     position: relative;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 40%;
+        height: 1px;
+        background-color: gold;
+        //background-color: red($color: #000000);
+        transform: translateX(-50%);
+    }
 }
 
 .color-container {
@@ -429,6 +622,30 @@ section {
             }
         }
     }
+
+    #socials-container {
+        //background-color: aquamarine;
+        margin-top: 150px;
+        gap: 2.5rem;
+        // align-items: center;
+        // justify-content: center;
+
+        i {
+            font-size: 30px;
+        }
+}
+
+    // &::before {
+    //     content: '';
+    //     position: absolute;
+    //     top: 0;
+    //     left: 50%;
+    //     width: 40%;
+    //     height: 1px;
+    //     background-color: gold;
+    //     //background-color: red($color: #000000);
+    //     transform: translateX(-50%);
+    // }
 }
 /*Contact Section*/
 
